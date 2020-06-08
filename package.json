@@ -1,0 +1,19 @@
+{
+  "name": "finalproj",
+  "version": "1.0.0",
+  "description": "This an interesting app to use for people in the movie industrie.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/masterkaizer/finalproj.git"
+  },
+  "author": "The team compose by Brandon Sellam, Paul Lebot, and Willie Gadson.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/masterkaizer/finalproj/issues"
+  },
+  "homepage": "https://github.com/masterkaizer/finalproj#readme"
+}
