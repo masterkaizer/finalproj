@@ -1,5 +1,6 @@
-import Signup from "./Components/Signup";
-
+//convention -dependencies go first, things we built, then style
+import Signup from "./Components/signup";
+import Home from "./Components/home.js";
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -16,10 +17,12 @@ export default function Routes() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. (can add nav bar above)*/}
         <Switch>
-          <Route path="/">
+          <Route exact path="/signup">
             <Signup />
           </Route>
-       
+          <Route exact path="/">
+            <Home />
+          </Route>
         </Switch>
       </div>
     </Router>
