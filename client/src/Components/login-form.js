@@ -57,6 +57,7 @@ class LoginForm extends Component {
         } else {
             return (
                 <div>
+                    <img  src="\images\logo.png"/>
                     <h4>Login</h4>
                     <form className="form-horizontal">
                         <div className="form-group">
