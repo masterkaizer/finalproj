@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 class LoginForm extends Component {
     constructor() {
@@ -57,6 +58,15 @@ class LoginForm extends Component {
         } else {
             return (
                 <div>
+                <nav class="navbar navbar-light bg-light">
+  <form class="form-inline">
+    <button class="btn btn-outline-success" type="button"><Link to="/">Home</Link></button>
+    <button class="btn btn-outline-success" type="button"><Link to="/login">Login</Link></button>
+    <button class="btn btn-outline-success" type="button"><Link to="/signup">Sign up</Link></button>
+    <button class="btn btn-outline-success" type="button"><Link to="/searchPage">Search Page</Link></button>
+
+ </form>
+</nav>
                     <img  src="\images\logo.png"/>
                     <h4>Login</h4>
                     <form className="form-horizontal">

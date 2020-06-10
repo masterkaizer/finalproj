@@ -1,6 +1,8 @@
 import React from 'react';
 import css from'../search.css';
 import axios from 'axios';
+import { Link } from 'react-router-dom'
+
 class Search extends React.Component {
 	constructor( props ) {
 		super( props );
@@ -18,6 +20,16 @@ class Search extends React.Component {
     }
     render() {
 		return (
+			<div>
+			<nav class="navbar navbar-light bg-light">
+<form class="form-inline">
+<button class="btn btn-outline-success" type="button"><Link to="/">Home</Link></button>
+<button class="btn btn-outline-success" type="button"><Link to="/login">Login</Link></button>
+<button class="btn btn-outline-success" type="button"><Link to="/signup">Sign up</Link></button>
+<button class="btn btn-outline-success" type="button"><Link to="/searchPage">Search Page</Link></button>
+
+</form>
+</nav>
 			<div className="container">
 				
 				<img  src="\images\logo.png"/>
@@ -33,6 +45,7 @@ class Search extends React.Component {
 					<i className="fa fa-search search-icon"/>
 				</label>
 				
+			</div>
 			</div>
 			)
 	}
