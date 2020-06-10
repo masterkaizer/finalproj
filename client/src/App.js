@@ -1,14 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 // components
 import Signup from './Components/sign-up.js'
 // import LoginForm from './Components/login-form'
-import Navbar from './Components/navbar'
 import Home from './Components/home'
 import Search from './Components/searchPage'
 import LoginForm from './Components/login-form'
 import { BrowserRouter as Router, Route,Switch } from "react-router-dom"
+
 
 
 function App() {
