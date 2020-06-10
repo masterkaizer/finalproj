@@ -21,6 +21,8 @@ class Home extends Component {
     <button class="btn btn-outline-success" type="button"><Link to="/">Home</Link></button>
     <button class="btn btn-outline-success" type="button"><Link to="/login">Login</Link></button>
     <button class="btn btn-outline-success" type="button"><Link to="/signup">Sign up</Link></button>
+    <button class="btn btn-outline-success" type="button"><Link to="/searchPage">Search Page</Link></button>
+
  </form>
 </nav>
                 
