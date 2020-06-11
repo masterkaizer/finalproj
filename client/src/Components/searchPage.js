@@ -9,7 +9,8 @@ import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Axios from 'axios';
-import { Map, GoogleApi, Marker} from 'google-maps-react';
+import { Link } from 'react-router-dom'
+
 class Search extends React.Component {
 
     constructor(props) {
@@ -76,6 +77,7 @@ class Search extends React.Component {
         )
     }
     render() {
+
         return (
             <>
                 <FormControl variant="outlined" style={{ marginTop: '30px', width: '100%' }}>
@@ -103,7 +105,9 @@ class Search extends React.Component {
                             let { parksName, hours, locations, description } = item.volumeInfo
                             return (
                                 <Card style={{ margin: '15px 0' }}>
-                                    <CardContent>
+                                    <CardContent
+//                               The grid creates visual consistency between layouts while allowing flexibility across a wide
+//                               variety of designs. Material Design’s responsive UI is based on a 12-column grid layout.
                                         <Grid container spacing={3}>
                                             <Grid item xs={8}>
                                                 <h3>{parksName}</h3>
@@ -145,6 +149,37 @@ class Search extends React.Component {
             </>
         )
     }
+
+		return (
+			<div>
+			<nav class="navbar navbar-light bg-light">
+<form class="form-inline">
+<button class="btn btn-outline-success" type="button"><Link to="/">Home</Link></button>
+<button class="btn btn-outline-success" type="button"><Link to="/login">Login</Link></button>
+<button class="btn btn-outline-success" type="button"><Link to="/signup">Sign up</Link></button>
+<button class="btn btn-outline-success" type="button"><Link to="/searchPage">Search Page</Link></button>
+
+</form>
+</nav>
+			<div className="container">
+				
+				<img  src="\images\logo.png"/>
+				<h2 className="heading">Search what you need</h2>
+				
+				<label className="search-label" htmlFor="search-input">
+					<input
+						type="text"
+						value=""
+						id="search-input"
+						placeholder="Search..."
+					/>
+					<i className="fa fa-search search-icon"/>
+				</label>
+				
+			</div>
+			</div>
+			)
+	}
 }
 
 export default Search

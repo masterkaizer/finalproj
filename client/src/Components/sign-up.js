@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { render } from 'react-dom'
+import { Link } from 'react-router-dom'
 
 
 class Signup extends Component {
@@ -46,7 +48,16 @@ class Signup extends Component {
 			})
 	}
 
-
+    };
+render()
+{ return(
+    <div>
+    <nav class="navbar navbar-light bg-light">
+<form class="form-inline">
+<button class="btn btn-outline-success" type="button"><Link to="/">Home</Link></button>
+<button class="btn btn-outline-success" type="button"><Link to="/login">Login</Link></button>
+<button class="btn btn-outline-success" type="button"><Link to="/signup">Sign up</Link></button>
+<button class="btn btn-outline-success" type="button"><Link to="/searchPage">Search Page</Link></button>
 render() {
 	return (
 		<div className="SignupForm">
