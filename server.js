@@ -2,9 +2,13 @@ const express = require("express");
 const path = require('path');
 const PORT = process.env.PORT || 3011;
 const app = express();
-const passport = require('./passport');
-const dbConnection = require('./database')
-const user = require('./routes/user')
+const morgan = require('morgan')
+const bodyParser = require('body-parser')
+const session = require('express-session');
+const passport = require('./client/server/passport');
+const dbConnection = require('./client/server/database')
+const MongoStore = require('connect-mongo')(session)
+const user = require('./client/server/routes/user')
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === 'production') {
@@ -20,6 +24,13 @@ app.use(
 	})
 )
 app.use(bodyParser.json())
+app.use(session({secret: self.secret,
+  store: new MongoStore({ mongooseConnection: dbConnection }),
+  resave: false, //required
+  saveUninitialized: false //required
+})
+)
+
 app.use(passport.initialize())
 app.use(passport.session()) 
 
@@ -27,7 +38,7 @@ app.get("*", function(req, res) {
   res.send("error 404 there is an error");
 });
 
-
+app.use('/client/server/database/models/user', user)
 app.listen(PORT, function() {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
 });
