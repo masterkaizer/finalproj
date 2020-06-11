@@ -6,6 +6,7 @@ import Signup from './Components/sign-up.js'
 import Home from './Components/home'
 import Search from './Components/searchPage'
 import LoginForm from './Components/login-form'
+import Recommendation from './Components/Recommendation-form'
 import { BrowserRouter as Router, Route,Switch } from "react-router-dom"
 
 
@@ -23,6 +24,7 @@ function App() {
           <Route component={Home} exact path="/"/>
           <Route component={LoginForm} exact path="/login"/>
           <Route component={Search} exact path="/searchPage"/>
+          <Route component={Recommendation} exact path="/recommendation-form"/>
         </Switch>
       </div>
     </Router>
