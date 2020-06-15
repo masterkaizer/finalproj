@@ -49,5 +49,6 @@
     "react-router-dom": "^5.2.0",
     "require": "^2.4.20",
     "spectre.css": "^0.5.8"
+    
   }
 }

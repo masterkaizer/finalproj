@@ -5,17 +5,16 @@ const app = express();
 const morgan = require('morgan')
 const bodyParser = require('body-parser')
 const session = require('express-session');
-const passport = require('./client/server/passport');
-const dbConnection = require('./client/server/database')
-const MongoStore = require('connect-mongo')(session)
-const user = require('./client/server/routes/user')
-
+const passport = require('./config/passport');
+const mongoose = require("mongoose");
+const users = require("./routes/api/users");
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static("client/build"));
 }
 
 // Send every request to the React app
+const db = require("./config/keys").mongoURI;
 // Define any API routes before this runs
 app.use(morgan('dev'))
 app.use(
@@ -30,6 +29,23 @@ app.use(session({secret: self.secret,
   saveUninitialized: false //required
 })
 )
+
+mongoose
+  .connect(
+    db,
+    { useNewUrlParser: true }
+  )
+  .then(() => console.log("MongoDB successfully connected"))
+  .catch(err => console.log(err));
+
+// Passport middleware
+app.use(passport.initialize());
+
+// Passport config
+require("./config/passport")(passport);
+
+// Routes
+app.use("/api/users", users);
 
 app.use(passport.initialize())
 app.use(passport.session()) 
