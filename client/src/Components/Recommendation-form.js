@@ -10,7 +10,6 @@ class Recommendation extends Component {
         super()
     }
 
-
     render() {
         const imageStyle = {
             width: 400
@@ -23,9 +22,10 @@ class Recommendation extends Component {
     <button class="btn btn-outline-success" type="button"><Link to="/">Home</Link></button>
     <button class="btn btn-outline-success" type="button"><Link to="/login">Login</Link></button>
     <button class="btn btn-outline-success" type="button"><Link to="/signup">Sign up</Link></button>
+    <button class="btn btn-outline-success" type="button"><Link to="/recommendations">Recommendations</Link></button>
     <button class="btn btn-outline-success" type="button"><Link to="/searchPage">Search Page</Link></button>
     <button class="btn btn-outline-success" type="button"><Link to="/recommendation-form">Recommendation</Link></button>
-
+    <button class="btn btn-outline-success" type="button"><Link to="/Profile">Profile</Link></button>
  </form>
 </nav>
                 

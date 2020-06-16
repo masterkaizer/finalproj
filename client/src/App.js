@@ -6,10 +6,13 @@ import Signup from './Components/sign-up.js'
 // import LoginForm from './Components/login-form'
 import Navbar from './Components/navbar'
 import Home from './Components/home'
-import Search from './Components/searchPage'
 import LoginForm from './Components/login-form'
 import Recommendation from './Components/Recommendation-form'
 import { BrowserRouter as Router, Route,Switch } from "react-router-dom"
+import Recommendations from './pages/Recommendations';
+import Meetup from './Components/meetups';
+import Profile from './Components/Profile';
+
 
 
 function App() {
@@ -24,25 +27,16 @@ function App() {
           <Route component={Signup} exact path="/signup"/>
           <Route component={Home} exact path="/"/>
           <Route component={LoginForm} exact path="/login"/>
-          <Route component={Search} exact path="/searchPage"/>
+          <Route component={Meetup} exact path="/meetups"/>
           <Route component={Recommendation} exact path="/recommendation-form"/>
+          <Route component={Recommendations} exact path="/recommendations"/>
+          <Route component={Profile} exact path="/Profile"/>
         </Switch>
       </div>
+      {/* <Recommendations/> */}
     </Router>
-{/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>       */}
+    <div>
+    </div>
     </div>
   );
 }

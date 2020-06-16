@@ -26,46 +26,37 @@ class LoginForm extends Component {
         event.preventDefault()
         console.log('handleSubmit')
 
-        axios
-            .post('/user/login', {
-                username: this.state.username,
-                password: this.state.password
-            })
-            .then(response => {
-                console.log('login response: ')
-                console.log(response)
-                if (response.status === 200) {
-                    // update App.js state
-                    this.props.updateUser({
-                        loggedIn: true,
-                        username: response.data.username
-                    })
+        // axios
+        //     .post('/user/login', {
+        //         username: this.state.username,
+        //         password: this.state.password
+        //     })
+        //     .then(response => {
+        //         console.log('login response: ')
+        //         console.log(response)
+        //         if (response.status === 200) {
+        //             // update App.js state
+        //             this.props.updateUser({
+        //                 loggedIn: true,
+        //                 username: response.data.username
+        //             })
                     // update the state to redirect to home
                     this.setState({
-                        redirectTo: '/'
-                    })
-                }
-            }).catch(error => {
-                console.log('login error: ')
-                console.log(error);
+                        redirectTo: '/Profile'
+                    });}
                 
-            })
-    }
 
-    render() {
-        if (this.state.redirectTo) {
-            return <Redirect to={{ pathname: this.state.redirectTo }} />
-        } else {
-            return (
+    render() {return(
                 <div>
                 <nav class="navbar navbar-light bg-light">
   <form class="form-inline">
     <button class="btn btn-outline-success" type="button"><Link to="/">Home</Link></button>
     <button class="btn btn-outline-success" type="button"><Link to="/login">Login</Link></button>
     <button class="btn btn-outline-success" type="button"><Link to="/signup">Sign up</Link></button>
+    <button class="btn btn-outline-success" type="button"><Link to="/recommendations">Recommendations</Link></button>
     <button class="btn btn-outline-success" type="button"><Link to="/searchPage">Search Page</Link></button>
     <button class="btn btn-outline-success" type="button"><Link to="/recommendation-form">News Feed</Link></button>
-
+    <button class="btn btn-outline-success" type="button"><Link to="/Profile">Profile</Link></button>
  </form>
 </nav>
                     <img  src="\images\logo.png"/>
@@ -102,16 +93,16 @@ class LoginForm extends Component {
                         </div>
                         <div className="form-group ">
                             <div className="col-7"></div>
-                            <button
+                            <button class="btn btn-outline-success" type="button"><Link to="/Profile">Login</Link></button>
+                            {/* <button
                                 className="btn btn-primary col-1 col-mr-auto"
                                
                                 onClick={this.handleSubmit}
-                                type="submit">Login</button>
+                                type="submit">Login</button> */}
                         </div>
                     </form>
                 </div>
-            )
-        }
+     )
     }
 }
 

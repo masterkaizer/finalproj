@@ -1,0 +1,24 @@
+module.exports = {
+  "development": {
+    "username": "root",
+    "password": Physics212!,
+    "database": "Recommend",
+    "host": "127.0.0.1",
+    "port": 3306,
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": Physics212!,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": Physics212!,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+} 

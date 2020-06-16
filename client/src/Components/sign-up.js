@@ -50,8 +50,10 @@ render()
 <button class="btn btn-outline-success" type="button"><Link to="/">Home</Link></button>
 <button class="btn btn-outline-success" type="button"><Link to="/login">Login</Link></button>
 <button class="btn btn-outline-success" type="button"><Link to="/signup">Sign up</Link></button>
+<button class="btn btn-outline-success" type="button"><Link to="/recommendations">Recommendations</Link></button>
 <button class="btn btn-outline-success" type="button"><Link to="/searchPage">Search Page</Link></button>
 <button class="btn btn-outline-success" type="button"><Link to="/recommendation-form">News Feed</Link></button>
+<button class="btn btn-outline-success" type="button"><Link to="/Profile">Profile</Link></button>
 
 </form>
 </nav>
@@ -59,34 +61,22 @@ render()
         <div className="SignupForm">
             <img  src="\images\logo.png"/>
         <h4>Sign up</h4>
-        <form className="form-horizontal">
+            <h3>Please fill in the below inorder to create your profile.</h3>
+            <ul><input type="text" placeholder="Username"/></ul>
+            <ul><input type="text" placeholder="Password"/></ul>
+            <ul><input type="text" placeholder="First Name"/></ul>
+            <ul><input type="text" placeholder="Email"/></ul>
+            <ul><input type="text" placeholder="Dog's name"/></ul>
+           <ul> <input type="text" placeholder="Breed"/></ul>
+            <ul><input type="text" placeholder="Size"/></ul>
+          <ul><input type="text" placeholder="Age"/></ul>
+            <ul><input type="text" placeholder="Activity level"/></ul>
+            <ul><input type="text" placeholder="Gender"/></ul>
             <div className="form-group">
                 <div className="col-1 col-ml-auto">
-                    <label className="form-label" htmlFor="username">Username</label>
+                    <label className="form-label" htmlFor="password"> </label>
                 </div>
                 <div className="col-3 col-mr-auto">
-                    <input className="form-input"
-                        type="text"
-                        id="username"
-                        name="username"
-                        placeholder="Username"
-                        // value={this.state.username}
-                        // onChange={this.handleChange}
-                    />
-                </div>
-            </div>
-            <div className="form-group">
-                <div className="col-1 col-ml-auto">
-                    <label className="form-label" htmlFor="password">Password: </label>
-                </div>
-                <div className="col-3 col-mr-auto">
-                    <input className="form-input"
-                        placeholder="password"
-                        type="password"
-                        name="password"
-                        // value={this.state.password}
-                        // onChange={this.handleChange}
-                    />
                 </div>
             </div>
             <div className="form-group ">
@@ -97,7 +87,6 @@ render()
                     type="submit"
                 >Sign up</button>
             </div>
-        </form>
     </div>
     </div>
 
