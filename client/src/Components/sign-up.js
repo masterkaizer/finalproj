@@ -49,7 +49,7 @@ class Signup extends Component {
 	}
 
     };
-render()
+render(
 { return(
     <div>
     <nav class="navbar navbar-light bg-light">
@@ -60,9 +60,15 @@ render()
 <button class="btn btn-outline-success" type="button"><Link to="/searchPage">Search Page</Link></button>
 <button class="btn btn-outline-success" type="button"><Link to="/recommendation-form">News Feed</Link></button>
 
+</form>
+</nav>
+            </div>
+	
+			)
+}
+);
+	}
 
-	)
-}
-}
+
 
 export default Signup

@@ -6,6 +6,7 @@ import FormControl from '@material-ui/core/FormControl';
 import IconButton from '@material-ui/core/IconButton';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
+import Redirect from '@material-ui/core/redirect';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Axios from 'axios';
@@ -105,7 +106,7 @@ class Search extends React.Component {
                             let { parksName, hours, locations, description } = item.volumeInfo
                             return (
                                 <Card style={{ margin: '15px 0' }}>
-                                    <CardContent
+                                <CardContent>
 //                               The grid creates visual consistency between layouts while allowing flexibility across a wide
 //                               variety of designs. Material Design’s responsive UI is based on a 12-column grid layout.
                                         <Grid container spacing={3}>
@@ -139,7 +140,7 @@ class Search extends React.Component {
                                             </Grid>
 
                                         </Grid>
-                                    </CardContent>
+                                   </CardContent>
                                 </Card>
 
                             );
@@ -149,18 +150,22 @@ class Search extends React.Component {
             </>
         )
     }
+    render() {
+        if (this.state.redirectTo) {
+            return <Redirect to={{ pathname: this.state.redirectTo }} />
+        } else {
+            return (
+  <div>
 
-		return (
-			<div>
-			<nav class="navbar navbar-light bg-light">
-<form class="form-inline">
-<button class="btn btn-outline-success" type="button"><Link to="/">Home</Link></button>
-<button class="btn btn-outline-success" type="button"><Link to="/login">Login</Link></button>
-<button class="btn btn-outline-success" type="button"><Link to="/signup">Sign up</Link></button>
-<button class="btn btn-outline-success" type="button"><Link to="/searchPage">Search Page</Link></button>
-<button class="btn btn-outline-success" type="button"><Link to="/recommendation-form">News Feed</Link></button>
+                <nav class="navbar navbar-light bg-light">
+  <form class="form-inline">
+    <button class="btn btn-outline-success" type="button"><Link to="/">Home</Link></button>
+    <button class="btn btn-outline-success" type="button"><Link to="/login">Login</Link></button>
+    <button class="btn btn-outline-success" type="button"><Link to="/signup">Sign up</Link></button>
+    <button class="btn btn-outline-success" type="button"><Link to="/searchPage">Search Page</Link></button>
+    <button class="btn btn-outline-success" type="button"><Link to="/recommendation-form">News Feed</Link></button>
 
-</form>
+ </form>
 </nav>
 			<div className="container">
 				
@@ -178,9 +183,10 @@ class Search extends React.Component {
 				</label>
 				
 			</div>
-			</div>
-			)
-	}
+            </div>
+	
+            )
+    }
 }
-
+}
 export default Search
